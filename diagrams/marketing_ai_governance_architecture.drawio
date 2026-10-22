@@ -1,0 +1,176 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram id="arch" name="Architecture &amp; Governance">
+    <mxGraphModel dx="1750" dy="1048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Marketing Automation with AI &amp;amp; Agents: Architecture and Governance&lt;/b&gt;" style="text;html=1;fontSize=18;align=left;verticalAlign=middle;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="20" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="In-region boundary (PDPL): identifiable data stays inside" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeWidth=2;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;arcSize=3;" parent="1" vertex="1">
+          <mxGeometry x="330" y="50" width="1060" height="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Principles&lt;/b&gt;&lt;br&gt;P1 Transparency by design&lt;br&gt;P2 Customer data stays in our control&lt;br&gt;P3 Risk-based human oversight&lt;br&gt;P4 Security proportional to sensitivity&lt;br&gt;&lt;br&gt;&lt;b&gt;Decisions&lt;/b&gt;&lt;br&gt;ADR-001 Hybrid LLM&lt;br&gt;ADR-002 PostgreSQL + vector&lt;br&gt;ADR-003 Real-time chat, batch campaigns" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;fillColor=none;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="20" y="50" width="290" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="customer" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="45" y="400" width="40" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="whatsapp" value="WhatsApp&lt;br&gt;(external channel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="150" y="320" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="website" value="Website" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="150" y="480" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="payment" value="Payment provider&lt;br&gt;(PCI-certified, P4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="150" y="640" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="Authentication /&lt;br&gt;Sign-up + consent (P1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="360" y="400" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="csagent" value="Customer service agent&lt;br&gt;(real-time, ADR-003)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="560" y="220" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="orch" value="&lt;b&gt;Agent orchestrator&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="560" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gen" value="Campaign generator agent&lt;br&gt;(batch, ADR-003)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="770" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="score" value="Scoring agent&lt;br&gt;(evaluated vs humans)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="980" y="400" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="Score &amp;ge; threshold&lt;br&gt;AND low risk? (P3)" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="380" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="human" value="&lt;b&gt;Human marketer review&lt;/b&gt;&lt;br&gt;approve / edit / reject" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="560" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="delivery" value="Campaign delivery&lt;br&gt;+ &amp;quot;why you got this&amp;quot; note (P1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="220" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kill" value="Stop switch:&lt;br&gt;pause all sending" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="100" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="selfllm" value="Self-hosted LLM&lt;br&gt;(identifiable data, ADR-001)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="560" y="560" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mask" value="PII masking (P2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="770" y="560" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="extllm" value="External LLM API&lt;br&gt;(masked data only)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1420" y="560" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="idstore" value="Identity &amp;amp; profile store&lt;br&gt;(encrypted, P4)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=10;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="360" y="740" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics" value="Analytics + vector store&lt;br&gt;PostgreSQL (ADR-002)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=10;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="560" y="740" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="consent" value="Consent records&lt;br&gt;(P1)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=10;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="770" y="740" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="log" value="Campaign &amp;amp; decision log&lt;br&gt;(P1, P3)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=10;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="980" y="740" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="monitor" value="Monitoring dashboard&lt;br&gt;quality, cost, alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="750" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="customer" target="whatsapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="customer" target="website" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="TLS" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="whatsapp" target="auth" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="TLS" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="website" target="auth" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="website" target="payment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="auth" target="orch" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="auth" target="idstore" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="queries" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="orch" target="csagent" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="campaign jobs" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="orch" target="gen" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="draft" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="gen" target="score" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="score" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="score" target="decision" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontStyle=1;fontColor=#2E7D32;fillColor=none;" parent="1" source="decision" target="delivery" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontStyle=1;fontColor=#C62828;fillColor=none;" parent="1" source="decision" target="human" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="approved" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=1;exitY=0.5;entryX=1;entryY=0.5;fillColor=none;" parent="1" source="human" target="delivery" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="590" />
+              <mxPoint x="1370" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="feedback (learning)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;dashed=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fillColor=none;" parent="1" source="human" target="gen" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1265" y="680" />
+              <mxPoint x="850" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="send" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=0.5;exitY=0;entryX=0.5;entryY=0;fillColor=none;" parent="1" source="delivery" target="whatsapp" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1265" y="180" />
+              <mxPoint x="220" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;dashed=1;fillColor=none;" parent="1" source="kill" target="delivery" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="identifiable" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=0.25;exitY=1;fillColor=none;" parent="1" source="gen" target="selfllm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" value="creative" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=0.5;exitY=1;fillColor=none;" parent="1" source="gen" target="mask" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="masked only" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;fillColor=none;" parent="1" source="mask" target="extllm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="retrieve" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;startArrow=block;fillColor=none;" parent="1" source="selfllm" target="analytics" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="check consent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=0.25;exitY=1;entryX=0.5;entryY=0;fillColor=none;" parent="1" source="orch" target="consent" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="500" />
+              <mxPoint x="740" y="500" />
+              <mxPoint x="740" y="700" />
+              <mxPoint x="850" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="log every decision" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=10;exitX=0.5;exitY=1;fillColor=none;" parent="1" source="score" target="log" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fillColor=none;" parent="1" source="log" target="monitor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
